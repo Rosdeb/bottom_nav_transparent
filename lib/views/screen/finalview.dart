@@ -61,35 +61,34 @@ class _FinalviewState extends State<Finalview> {
           ),
 
           Positioned(
-            bottom: 16,
-            left: 16,
-            right: 16,
-            height: 86,
+            bottom: 0,
+            left: 12,
+            right: 12,
+            height: 70,
             child: AnimatedContainer(
               duration: Duration(microseconds: 200),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(24),
                   topRight: Radius.circular(24),
-                  bottomLeft: Radius.circular(52),
-                  bottomRight: Radius.circular(52),
                 ),
-                color: theme.scaffoldBackgroundColor.withOpacity(0.3),
+                color:Colors.green.withOpacity(0.5),
               ),
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(24),
-                    topLeft: Radius.circular(24),
-                    bottomLeft: Radius.circular(52),
-                    bottomRight: Radius.circular(52)),
+                    topLeft: Radius.circular(24),),
                 child: ClipPath(
-                  clipper: MyCustomClipper(),
+                 // clipper: MyCustomClipper(),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaY: 8, sigmaX: 8),
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.15),
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24),
+                          topRight: Radius.circular(24),
+                        ),
                         border: Border.all(
                             color: Colors.white.withOpacity(0.2), width: 1),
                       ),
@@ -102,10 +101,10 @@ class _FinalviewState extends State<Finalview> {
             ),
           ),
           Positioned(
-            bottom: 16,
+            bottom: 0,
             left: 20,
             right: 20,
-            height: 86,
+            height: 70,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -139,7 +138,7 @@ class _FinalviewState extends State<Finalview> {
           child: Icon(
             icon,
             color: isSelected ? Colors.amberAccent : Colors.white,
-            size: isSelected ? 32 : 29,
+            size: isSelected ? 25 : 28,
           ),
         ),
       );
